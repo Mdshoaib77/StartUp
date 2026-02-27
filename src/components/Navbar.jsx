@@ -1175,7 +1175,7 @@ const Navbar = () => {
                 variants={ctaVariants}
                 href="#newsletter"
                 onClick={() => setIsMenuOpen(false)}
-                className="mt-6 block w-full text-center bg-black text-white py-4 rounded-full font-bold text-lg shadow-lg"
+                className="mt-4 block w-full text-center bg-black text-white py-4 rounded-full font-bold text-lg shadow-lg"
               >
                 Let's Talk
               </motion.a>

@@ -91,7 +91,7 @@ const ScrollButton = ({ isMenuOpen }) => { // Prop হিসেবে এটি 
   if (isMenuOpen) return null; 
 
   return (
-    <div className="fixed bottom-24 right-4 md:right-48 z-40">
+    <div className="fixed bottom-24 right-6 md:right-48 z-40">
       <button onClick={handleClick} className="group transition-all duration-300 hover:scale-110">
         <img
           src={scrollbar}

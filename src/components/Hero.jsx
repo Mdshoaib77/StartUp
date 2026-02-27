@@ -1767,6 +1767,222 @@
 // export default Hero;
 
 
+// Good Layout
+
+
+
+// import React from "react";
+// import { motion } from "framer-motion";
+// import redbd from "../assets/redbg.png";
+
+// const Hero = () => {
+
+//   const fadeInUp = {
+//     hidden: { y: 60, opacity: 0 },
+//     visible: { 
+//       y: 0, 
+//       opacity: 1, 
+//       transition: { duration: 1.4, ease: [0.22, 1, 0.36, 1] } 
+//     }
+//   };
+
+//   const staggerContainer = {
+//     hidden: { opacity: 0 },
+//     visible: {
+//       opacity: 1,
+//       transition: { staggerChildren: 0.35, delayChildren: 0.3 }
+//     }
+//   };
+
+//   return (
+//     <section id="hero" className="relative w-full min-h-screen bg-[#f2f2f2] overflow-hidden pt-16 md:pt-20 font-space">
+
+//       {/* 🔴 RED IMAGE GLOW */}
+//       <motion.div 
+//         animate={{ 
+//           scale: [1, 1.08, 1],
+//           opacity: [0.55, 0.65, 0.55] 
+//         }}
+//         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+//         className="pointer-events-none absolute inset-0"
+//       >
+//         <img
+//           src={redbd}
+//           alt="Red Glow"
+//           className="
+//             absolute
+//             left-[65%] top-[55%]
+//             h-[500px] w-[500px]
+//             md:h-[650px] md:w-[650px]
+//             lg:h-[800px] lg:w-[800px]
+//             -translate-x-1/2 -translate-y-1/2
+//             object-contain opacity-80
+//           "
+//         />
+//       </motion.div>
+
+//       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+//         <div className="relative min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)]">
+
+//           {/* ✳︎ ASTERISK */}
+//           <motion.div 
+//             initial={{ opacity: 0, rotate: -180 }}
+//             animate={{ opacity: 1, rotate: 0 }}
+//             transition={{ duration: 1.6 }}
+//             className="
+//               absolute
+//               left-0
+//               top-[80px]
+//               md:top-[110px]
+//             "
+//           >
+//             <span className="
+//               text-[60px]
+//               md:text-[85px]
+//               leading-none select-none font-semibold block
+//             ">
+//               ✳︎
+//             </span>
+//           </motion.div>
+
+//           {/* HEADLINE */}
+//           <motion.div 
+//             variants={staggerContainer}
+//             initial="hidden"
+//             animate="visible"
+//             className="
+//               absolute
+//               left-0
+//               top-[160px]
+
+//               md:left-[110px]
+//               md:top-[100px]
+//             "
+//           >
+//             <h1 className="font-semibold uppercase leading-[0.9] tracking-[-0.03em] text-black">
+
+//               {/* WHERE IDEAS */}
+//               <div className="overflow-hidden">
+//                 <motion.div 
+//                   variants={fadeInUp}
+//                   className="
+//                     text-[52px]
+//                     sm:text-[70px]
+//                     md:text-[120px]
+//                   "
+//                 >
+//                   WHERE IDEAS
+//                 </motion.div>
+//               </div>
+
+//               {/* SHAPE THE */}
+//               <div className="overflow-hidden">
+//                 <motion.div 
+//                   variants={fadeInUp}
+//                   className="
+//                     text-[52px]
+//                     sm:text-[70px]
+//                     md:text-[120px]
+
+//                     mt-[15px]
+//                     md:mt-[25px]
+
+//                     ml-0
+//                     md:ml-[420px]
+//                   "
+//                 >
+//                   SHAPE THE
+//                 </motion.div>
+//               </div>
+
+//               {/* FUTURES */}
+//               <div className="overflow-hidden">
+//                 <motion.div 
+//                   variants={fadeInUp}
+//                   className="
+//                     text-[52px]
+//                     sm:text-[70px]
+//                     md:text-[120px]
+
+//                     mt-[15px]
+//                     md:mt-[25px]
+
+//                     flex items-start
+//                   "
+//                 >
+//                   FUTURES
+//                   <motion.span 
+//                     initial={{ opacity: 0 }}
+//                     animate={{ opacity: 1 }}
+//                     transition={{ delay: 2.2, duration: 1 }}
+//                     className="
+//                       text-[20px]
+//                       sm:text-[26px]
+//                       md:text-[40px]
+//                       leading-none ml-2
+//                     "
+//                   >
+//                     ®
+//                   </motion.span>
+//                 </motion.div>
+//               </div>
+
+//             </h1>
+//           </motion.div>
+
+//           {/* PARAGRAPH */}
+//           <motion.div 
+//             initial={{ opacity: 0, x: -20 }}
+//             animate={{ opacity: 1, x: 0 }}
+//             transition={{ delay: 1.2, duration: 0.8 }}
+//             className="
+//               absolute
+//               left-0
+//               top-[340px]
+
+//               md:left-[220px]
+//               md:top-[260px]
+//             "
+//           >
+//             <p className="
+//               max-w-[730px]
+//               md:max-w-[660px]
+
+//               text-[12px]
+//               md:text-[13px]
+
+//               font-semibold uppercase leading-[1.4] tracking-[0.08em] text-black
+//             ">
+//               WE ARE STRATEGIC BRANDING AGENCY <br />
+//               HELPING THE PLANET MOST COMPANIES <br />
+//               MOVE FORWARDS.
+//             </p>
+//           </motion.div>
+
+//           {/* SCROLL DOWN */}
+//           <motion.div 
+//             animate={{ y: [0, 10, 0] }}
+//             transition={{ duration: 3, repeat: Infinity }}
+//             className="
+//               absolute
+//               bottom-6 right-4
+//               md:bottom-10 md:right-2
+//             "
+//           >
+//             <span className="text-[11px] md:text-[12px] font-semibold uppercase tracking-[0.12em] text-black">
+//               SCROLL DOWN
+//             </span>
+//           </motion.div>
+
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
 import React from "react";
 import { motion } from "framer-motion";
 import redbd from "../assets/redbg.png";
@@ -1788,6 +2004,13 @@ const Hero = () => {
       opacity: 1,
       transition: { staggerChildren: 0.35, delayChildren: 0.3 }
     }
+  };
+
+  const scrollToNext = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -1817,7 +2040,7 @@ const Hero = () => {
         />
       </motion.div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-6 md:px-4 sm:px-6 lg:px-8">
         <div className="relative min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)]">
 
           {/* ✳︎ ASTERISK */}
@@ -1849,80 +2072,108 @@ const Hero = () => {
             className="
               absolute
               left-0
-              top-[160px]
-
+              top-[150px]
               md:left-[110px]
               md:top-[100px]
             "
           >
-            <h1 className="font-semibold uppercase leading-[0.9] tracking-[-0.03em] text-black">
+            <h1 className="font-semibold uppercase leading-[1] md:leading-[0.9] tracking-[-0.03em] text-black">
 
-              {/* WHERE IDEAS */}
-              <div className="overflow-hidden">
-                <motion.div 
-                  variants={fadeInUp}
-                  className="
-                    text-[52px]
-                    sm:text-[70px]
-                    md:text-[120px]
-                  "
-                >
-                  WHERE IDEAS
-                </motion.div>
-              </div>
-
-              {/* SHAPE THE */}
-              <div className="overflow-hidden">
-                <motion.div 
-                  variants={fadeInUp}
-                  className="
-                    text-[52px]
-                    sm:text-[70px]
-                    md:text-[120px]
-
-                    mt-[15px]
-                    md:mt-[25px]
-
-                    ml-0
-                    md:ml-[420px]
-                  "
-                >
-                  SHAPE THE
-                </motion.div>
-              </div>
-
-              {/* FUTURES */}
-              <div className="overflow-hidden">
-                <motion.div 
-                  variants={fadeInUp}
-                  className="
-                    text-[52px]
-                    sm:text-[70px]
-                    md:text-[120px]
-
-                    mt-[15px]
-                    md:mt-[25px]
-
-                    flex items-start
-                  "
-                >
-                  FUTURES
-                  <motion.span 
+              {/* Mobile 4-line layout */}
+              <div className="md:hidden space-y-3">
+                <div className="overflow-hidden">
+                  <motion.div variants={fadeInUp} className="text-[48px]">
+                    WHERE 
+                  </motion.div>
+                </div>
+                <div className="overflow-hidden">
+                  <motion.div variants={fadeInUp} className="text-[48px]">
+                   IDEAS 
+                  </motion.div>
+                </div>
+                <div className="overflow-hidden">
+                  <motion.div variants={fadeInUp} className="text-[48px]">
+                  SHAPE  THE
+                  </motion.div>
+                </div>
+                <div className="overflow-hidden flex items-start">
+                  <motion.div variants={fadeInUp} className="text-[48px]">
+                    FUTURES
+                  </motion.div>
+                  <motion.span
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 2.2, duration: 1 }}
-                    className="
-                      text-[20px]
-                      sm:text-[26px]
-                      md:text-[40px]
-                      leading-none ml-2
-                    "
+                    className="text-[18px] ml-2"
                   >
                     ®
                   </motion.span>
-                </motion.div>
+                </div>
               </div>
 
+              {/* Desktop layout (UNCHANGED) */}
+              <div className="hidden md:block">
+
+                <div className="overflow-hidden">
+                  <motion.div 
+                    variants={fadeInUp}
+                    className="
+                      text-[52px]
+                      sm:text-[70px]
+                      md:text-[120px]
+                    "
+                  >
+                    WHERE IDEAS
+                  </motion.div>
+                </div>
+
+                <div className="overflow-hidden">
+                  <motion.div 
+                    variants={fadeInUp}
+                    className="
+                      text-[52px]
+                      sm:text-[70px]
+                      md:text-[120px]
+                      mt-[15px]
+                      md:mt-[25px]
+                      ml-0
+                      md:ml-[420px]
+                    "
+                  >
+                    SHAPE THE
+                  </motion.div>
+                </div>
+
+                <div className="overflow-hidden">
+                  <motion.div 
+                    variants={fadeInUp}
+                    className="
+                      text-[52px]
+                      sm:text-[70px]
+                      md:text-[120px]
+                      mt-[15px]
+                      md:mt-[25px]
+                      flex items-start
+                    "
+                  >
+                    FUTURES
+                    <motion.span 
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 2.2, duration: 1 }}
+                      className="
+                        text-[20px]
+                        sm:text-[26px]
+                        md:text-[40px]
+                        leading-none ml-2
+                      "
+                    >
+                      ®
+                    </motion.span>
+                  </motion.div>
+                </div>
+
+              </div>
             </h1>
           </motion.div>
 
@@ -1934,20 +2185,17 @@ const Hero = () => {
             className="
               absolute
               left-0
-              top-[340px]
-
+              top-[420px]
               md:left-[220px]
               md:top-[260px]
             "
           >
             <p className="
-              max-w-[330px]
-              md:max-w-[360px]
-
-              text-[12px]
+              max-w-[320px]
+              md:max-w-[660px]
+              text-[13px]
               md:text-[13px]
-
-              font-semibold uppercase leading-[1.4] tracking-[0.08em] text-black
+              font-semibold uppercase leading-[1.5] tracking-[0.08em] text-black
             ">
               WE ARE STRATEGIC BRANDING AGENCY <br />
               HELPING THE PLANET MOST COMPANIES <br />
@@ -1957,15 +2205,17 @@ const Hero = () => {
 
           {/* SCROLL DOWN */}
           <motion.div 
+            onClick={scrollToNext}
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 3, repeat: Infinity }}
             className="
               absolute
-              bottom-6 right-4
+              bottom-8 right-6
               md:bottom-10 md:right-2
+              cursor-pointer
             "
           >
-            <span className="text-[11px] md:text-[12px] font-semibold uppercase tracking-[0.12em] text-black">
+            <span className="text-[12px] md:text-[12px] font-semibold uppercase tracking-[0.12em] text-black">
               SCROLL DOWN
             </span>
           </motion.div>
