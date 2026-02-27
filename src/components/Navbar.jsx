@@ -418,8 +418,608 @@
 // export default Navbar;
 
 
+// import React, { useState } from "react";
+// import { HiMenu, HiX } from "react-icons/hi";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { fadeIn } from "../utils/motion";
+
+// const Navbar = () => {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const [activeLink, setActiveLink] = useState("#home");
+
+//   const navLinks = [
+//     { href: "#home", label: "Home" },
+//     { href: "#about", label: "About" },
+//     { href: "#services", label: "Services" },
+//     { href: "#Contact", label: "Contact" },
+//   ];
+
+//   return (
+//     <motion.nav
+//       variants={fadeIn("down", 0.2)}
+//       initial="hidden"
+//       animate="show"
+//       /* ✅ 'fixed' পরিবর্তন করে 'absolute' করা হয়েছে যাতে স্ক্রল করলে এটি উপরে চলে যায় */
+//       className="absolute top-0 left-0 right-0 z-50 bg-[#F2F2F2]"
+//     >
+//       <div className="container mx-auto px-4 sm:px-6 lg:px-8 md:h-20 h-16 flex items-center justify-between">
+
+//         {/* Logo */}
+//         <div className="flex items-center gap-4 cursor-pointer">
+//           <div className="h-11 w-11 flex items-center justify-center rounded-2xl border border-black/10 bg-white text-black font-semibold shadow-sm">
+//             TS
+//           </div>
+//           <div>
+//             <p className="font-semibold text-black leading-tight">
+//               TawakkulStudio
+//             </p>
+//             <p className="text-sm text-black/50">
+//               Branding • Web • Growth
+//             </p>
+//           </div>
+//         </div>
+
+//         {/* Desktop Menu */}
+//         <div className="hidden md:flex items-center gap-8">
+
+//           {/* Center Pill Navigation */}
+//           <div className="flex items-center gap-8 bg-white px-8 py-3 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-black/5">
+//             {navLinks.map((link, index) => (
+//               <a
+//                 key={index}
+//                 href={link.href}
+//                 onClick={() => setActiveLink(link.href)}
+//                 className={`relative text-sm font-medium transition px-3 py-1 rounded-full ${
+//                   activeLink === link.href
+//                     ? "bg-gray-200 text-black"
+//                     : "text-gray-600 hover:text-black"
+//                 }`}
+//               >
+//                 {link.label}
+//               </a>
+//             ))}
+//           </div>
+
+//           {/* CTA Button */}
+//           <motion.a
+//             whileHover={{ scale: 1.05 }}
+//             whileTap={{ scale: 0.95 }}
+//             href="#newsletter"
+//             className="bg-black text-white px-7 py-3 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition"
+//           >
+//             Let's Talk
+//           </motion.a>
+//         </div>
+
+//         {/* Mobile Toggle */}
+//         <button
+//           className="md:hidden p-2 text-black"
+//           onClick={() => setIsMenuOpen(!isMenuOpen)}
+//         >
+//           {isMenuOpen ? (
+//             <HiX className="h-6 w-6" />
+//           ) : (
+//             <HiMenu className="h-6 w-6" />
+//           )}
+//         </button>
+//       </div>
+
+//       {/* Mobile Menu */}
+//       <AnimatePresence>
+//         {isMenuOpen && (
+//           <>
+//             <motion.div
+//               initial={{ opacity: 0 }}
+//               animate={{ opacity: 1 }}
+//               exit={{ opacity: 0 }}
+//               /* ✅ Mobile Overlay ও 'absolute' করা হয়েছে */
+//               className="absolute inset-0 h-[100vh] bg-black/20 backdrop-blur-sm md:hidden"
+//               onClick={() => setIsMenuOpen(false)}
+//             />
+
+//             <motion.div
+//               initial={{ y: -40, opacity: 0 }}
+//               animate={{ y: 0, opacity: 1 }}
+//               exit={{ y: -40, opacity: 0 }}
+//               transition={{ type: "spring", stiffness: 220 }}
+//               className="absolute top-full left-0 right-0 bg-[#F1F2F4] md:hidden shadow-xl"
+//             >
+//               <div className="px-6 py-8 space-y-6">
+
+//                 {navLinks.map((link, index) => (
+//                   <motion.a
+//                     key={index}
+//                     href={link.href}
+//                     initial={{ x: -40, opacity: 0 }}
+//                     animate={{ x: 0, opacity: 1 }}
+//                     transition={{ delay: index * 0.1 }}
+//                     onClick={() => {
+//                       setActiveLink(link.href);
+//                       setIsMenuOpen(false);
+//                     }}
+//                     className="block text-lg font-medium text-gray-700 hover:text-black"
+//                   >
+//                     {link.label}
+//                   </motion.a>
+//                 ))}
+
+//                 <motion.a
+//                   initial={{ y: 20, opacity: 0 }}
+//                   animate={{ y: 0, opacity: 1 }}
+//                   transition={{ delay: 0.3 }}
+//                   href="#newsletter"
+//                   className="block w-full text-center bg-black text-white py-3 rounded-full font-medium"
+//                 >
+//                   Let's Talk
+//                 </motion.a>
+
+//               </div>
+//             </motion.div>
+//           </>
+//         )}
+//       </AnimatePresence>
+//     </motion.nav>
+//   );
+// };
+
+// export default Navbar;
+
+
+// import React, { useState } from "react";
+// import { HiMenu, HiX } from "react-icons/hi";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { fadeIn } from "../utils/motion";
+
+// const Navbar = () => {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const [activeLink, setActiveLink] = useState("#home");
+
+//   const navLinks = [
+//     { href: "#home", label: "Home" },
+//     { href: "#about", label: "About" },
+//     { href: "#works", label: "works" },
+//     { href: "#services", label: "Services" },
+//     { href: "#Contact", label: "Contact" },
+//   ];
+
+//   return (
+//     <motion.nav
+//       variants={fadeIn("down", 0.2)}
+//       initial="hidden"
+//       animate="show"
+//       /* ✅ 'fixed' পরিবর্তন করে 'absolute' করা হয়েছে যাতে স্ক্রল করলে এটি উপরে চলে যায় */
+//       className="absolute top-0 left-0 right-0 z-50 bg-[#F2F2F2]"
+//     >
+//       <div className="container mx-auto px-4 sm:px-6 lg:px-8 md:h-20 h-16 flex items-center justify-between">
+
+//         {/* Logo */}
+//         <div className="flex items-center gap-4 cursor-pointer">
+//           {/* <div className="h-11 w-11 flex items-center justify-center rounded-2xl border border-black/10 bg-white text-black font-semibold shadow-sm">
+//             TS
+//           </div> */}
+//           <div>
+//             <p className="font-semibold text-3xl text-black leading-tight">
+//               Marks
+//             </p>
+//             {/* <p className="text-sm text-black/50">
+//               Branding • Web • Growth
+//             </p> */}
+//           </div>
+//         </div>
+
+//         {/* Desktop Menu */}
+//         <div className="hidden md:flex items-center gap-8">
+
+//           {/* Center Pill Navigation */}
+//           <div className="flex items-center gap-8 bg-white px-8 py-3 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-black/5">
+//             {navLinks.map((link, index) => (
+//               <a
+//                 key={index}
+//                 href={link.href}
+//                 onClick={() => setActiveLink(link.href)}
+//                 className={`relative text-sm font-medium transition px-3 py-1 rounded-full ${
+//                   activeLink === link.href
+//                     ? "bg-gray-200 text-black"
+//                     : "text-gray-600 hover:text-black"
+//                 }`}
+//               >
+//                 {link.label}
+//               </a>
+//             ))}
+//           </div>
+
+//           {/* CTA Button */}
+//           <motion.a
+//             whileHover={{ scale: 1.05 }}
+//             whileTap={{ scale: 0.95 }}
+//             href="#newsletter"
+//             className="bg-black text-white px-7 py-3 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition"
+//           >
+//             Let's Talk
+//           </motion.a>
+//         </div>
+
+//         {/* Mobile Toggle */}
+//         <button
+//           className="md:hidden p-2 text-black"
+//           onClick={() => setIsMenuOpen(!isMenuOpen)}
+//         >
+//           {isMenuOpen ? (
+//             <HiX className="h-6 w-6" />
+//           ) : (
+//             <HiMenu className="h-6 w-6" />
+//           )}
+//         </button>
+//       </div>
+
+//       {/* Mobile Menu */}
+//       <AnimatePresence>
+//         {isMenuOpen && (
+//           <>
+//             <motion.div
+//               initial={{ opacity: 0 }}
+//               animate={{ opacity: 1 }}
+//               exit={{ opacity: 0 }}
+//               /* ✅ Mobile Overlay ও 'absolute' করা হয়েছে */
+//               className="absolute inset-0 h-[100vh] bg-black/20 backdrop-blur-sm md:hidden"
+//               onClick={() => setIsMenuOpen(false)}
+//             />
+
+//             <motion.div
+//               initial={{ y: -40, opacity: 0 }}
+//               animate={{ y: 0, opacity: 1 }}
+//               exit={{ y: -40, opacity: 0 }}
+//               transition={{ type: "spring", stiffness: 220 }}
+//               className="absolute top-full left-0 right-0 bg-[#F1F2F4] md:hidden shadow-xl"
+//             >
+//               <div className="px-6 py-8 space-y-6">
+
+//                 {navLinks.map((link, index) => (
+//                   <motion.a
+//                     key={index}
+//                     href={link.href}
+//                     initial={{ x: -40, opacity: 0 }}
+//                     animate={{ x: 0, opacity: 1 }}
+//                     transition={{ delay: index * 0.1 }}
+//                     onClick={() => {
+//                       setActiveLink(link.href);
+//                       setIsMenuOpen(false);
+//                     }}
+//                     className="block text-lg font-medium text-gray-700 hover:text-black"
+//                   >
+//                     {link.label}
+//                   </motion.a>
+//                 ))}
+
+//                 <motion.a
+//                   initial={{ y: 20, opacity: 0 }}
+//                   animate={{ y: 0, opacity: 1 }}
+//                   transition={{ delay: 0.3 }}
+//                   href="#newsletter"
+//                   className="block w-full text-center bg-black text-white py-3 rounded-full font-medium"
+//                 >
+//                   Let's Talk
+//                 </motion.a>
+
+//               </div>
+//             </motion.div>
+//           </>
+//         )}
+//       </AnimatePresence>
+//     </motion.nav>
+//   );
+// };
+
+// export default Navbar;
+
+// import React, { useState } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { fadeIn } from "../utils/motion";
+
+// const Navbar = () => {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const [activeLink, setActiveLink] = useState("#home");
+
+//   const navLinks = [
+//     { href: "#home", label: "Home" },
+//     { href: "#about", label: "About" },
+//     { href: "#works", label: "Works" },
+//     { href: "#services", label: "Services" },
+//     { href: "#Contact", label: "Contact" },
+//   ];
+
+//   // মোবাইল মেনু অ্যানিমেশন ভেরিয়েন্ট (ভিডিওর মতো স্লাইড)
+//   const menuVariants = {
+//     closed: {
+//       y: "-100%",
+//       transition: { duration: 0.7, ease: [0.19, 1, 0.22, 1] },
+//     },
+//     opened: {
+//       y: 0,
+//       transition: {
+//         duration: 0.8,
+//         ease: [0.19, 1, 0.22, 1],
+//         staggerChildren: 0.1,
+//         delayChildren: 0.2,
+//       },
+//     },
+//   };
+
+//   const linkVariants = {
+//     closed: { opacity: 0, y: 30 },
+//     opened: { opacity: 1, y: 0 },
+//   };
+
+//   return (
+//     <motion.nav
+//       variants={fadeIn("down", 0.2)}
+//       initial="hidden"
+//       animate="show"
+//       className="absolute top-0 left-0 right-0 z-50 bg-[#F2F2F2]"
+//     >
+//       <div className="container mx-auto px-4 sm:px-6 lg:px-8 md:h-20 h-16 flex items-center justify-between">
+        
+//         {/* Logo (আপনার দেওয়া ডিটেইলস অনুযায়ী) */}
+//         <div className="flex items-center gap-4 cursor-pointer">
+//           <p className="font-semibold text-3xl text-black leading-tight">
+//             Marks
+//           </p>
+//         </div>
+
+//         {/* Desktop Menu (Exact same as your provided code) */}
+//         <div className="hidden md:flex items-center gap-8">
+//           <div className="flex items-center gap-8 bg-white px-8 py-3 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-black/5">
+//             {navLinks.map((link, index) => (
+//               <a
+//                 key={index}
+//                 href={link.href}
+//                 onClick={() => setActiveLink(link.href)}
+//                 className={`relative text-sm font-medium transition px-3 py-1 rounded-full ${
+//                   activeLink === link.href
+//                     ? "bg-gray-200 text-black"
+//                     : "text-gray-600 hover:text-black"
+//                 }`}
+//               >
+//                 {link.label}
+//               </a>
+//             ))}
+//           </div>
+
+//           <motion.a
+//             whileHover={{ scale: 1.05 }}
+//             whileTap={{ scale: 0.95 }}
+//             href="#newsletter"
+//             className="bg-black text-white px-7 py-3 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition"
+//           >
+//             Let's Talk
+//           </motion.a>
+//         </div>
+
+//         {/* Mobile Toggle Button (ভিডিওর মতো "Menu" টেক্সট) */}
+//         <button
+//           className="md:hidden text-lg font-medium text-black px-2"
+//           onClick={() => setIsMenuOpen(true)}
+//         >
+//           Menu
+//         </button>
+//       </div>
+
+//       {/* Fullscreen Mobile Menu Overlay (ভিডিওর মতো এনিমেশন) */}
+//       <AnimatePresence>
+//         {isMenuOpen && (
+//           <motion.div
+//             initial="closed"
+//             animate="opened"
+//             exit="closed"
+//             variants={menuVariants}
+//             className="fixed inset-0 z-[100] bg-[#111111] text-white flex flex-col md:hidden"
+//           >
+//             {/* Mobile Menu Header */}
+//             <div className="container mx-auto px-4 h-16 flex justify-between items-center border-b border-white/10">
+//               <span className="font-semibold text-2xl">Marks</span>
+//               <button
+//                 onClick={() => setIsMenuOpen(false)}
+//                 className="text-lg font-medium tracking-wide"
+//               >
+//                 Close
+//               </button>
+//             </div>
+
+//             {/* Mobile Links Container */}
+//             <div className="flex-1 flex flex-col justify-start pt-12 px-6">
+//               {navLinks.map((link, index) => (
+//                 <motion.div
+//                   key={index}
+//                   variants={linkVariants}
+//                   className="border-b border-white/5"
+//                 >
+//                   <a
+//                     href={link.href}
+//                     onClick={() => {
+//                       setActiveLink(link.href);
+//                       setIsMenuOpen(false);
+//                     }}
+//                     className="block py-6 text-4xl font-medium tracking-tight active:text-gray-400"
+//                   >
+//                     {link.label}
+//                   </a>
+//                 </motion.div>
+//               ))}
+
+//               {/* Mobile CTA */}
+//               <motion.a
+//                 variants={linkVariants}
+//                 href="#newsletter"
+//                 className="mt-12 block w-full text-center bg-white text-black py-4 rounded-full font-bold text-lg"
+//               >
+//                 Let's Talk
+//               </motion.a>
+//             </div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </motion.nav>
+//   );
+// };
+
+// export default Navbar;
+
+
+// import React, { useState } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { fadeIn } from "../utils/motion";
+
+// const Navbar = () => {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const [activeLink, setActiveLink] = useState("#home");
+
+//   const navLinks = [
+//     { href: "#home", label: "Home" },
+//     { href: "#about", label: "About" },
+//     { href: "#works", label: "Works" },
+//     { href: "#services", label: "Services" },
+//     { href: "#Contact", label: "Contact" },
+//   ];
+
+//   // মোবাইল মেনু স্লাইড অ্যানিমেশন
+//   const menuVariants = {
+//     closed: {
+//       y: "-100%",
+//       transition: { duration: 0.7, ease: [0.19, 1, 0.22, 1] },
+//     },
+//     opened: {
+//       y: 0,
+//       transition: {
+//         duration: 0.8,
+//         ease: [0.19, 1, 0.22, 1],
+//         staggerChildren: 0.1,
+//         delayChildren: 0.2,
+//       },
+//     },
+//   };
+
+//   const linkVariants = {
+//     closed: { opacity: 0, y: 30 },
+//     opened: { opacity: 1, y: 0 },
+//   };
+
+//   return (
+//     <motion.nav
+//       variants={fadeIn("down", 0.2)}
+//       initial="hidden"
+//       animate="show"
+//       className="absolute top-0 left-0 right-0 z-50 bg-[#f2f2f2]"
+//     >
+//       <div className="container mx-auto px-4 sm:px-6 lg:px-8 md:h-20 h-16 flex items-center justify-between">
+        
+//         {/* Logo Section */}
+//         <div className="flex items-center gap-4 cursor-pointer">
+//           <p className="font-semibold text-3xl text-black leading-tight">
+//             Marks
+//           </p>
+//         </div>
+
+//         {/* Desktop Menu - Exact same to same */}
+//         <div className="hidden md:flex items-center gap-8">
+//           <div className="flex items-center gap-8 bg-white px-8 py-3 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-black/5">
+//             {navLinks.map((link, index) => (
+//               <a
+//                 key={index}
+//                 href={link.href}
+//                 onClick={() => setActiveLink(link.href)}
+//                 className={`relative text-sm font-medium transition px-3 py-1 rounded-full ${
+//                   activeLink === link.href
+//                     ? "bg-gray-200 text-black"
+//                     : "text-gray-600 hover:text-black"
+//                 }`}
+//               >
+//                 {link.label}
+//               </a>
+//             ))}
+//           </div>
+
+//           <motion.a
+//             whileHover={{ scale: 1.05 }}
+//             whileTap={{ scale: 0.95 }}
+//             href="#newsletter"
+//             className="bg-black text-white px-7 py-3 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition"
+//           >
+//             Let's Talk
+//           </motion.a>
+//         </div>
+
+//         {/* Mobile Toggle Button */}
+//         <button
+//           className="md:hidden text-lg font-medium text-black px-2"
+//           onClick={() => setIsMenuOpen(true)}
+//         >
+//           Menu
+//         </button>
+//       </div>
+
+//       {/* Fullscreen Mobile Menu Overlay */}
+//       <AnimatePresence>
+//         {isMenuOpen && (
+//           <motion.div
+//             initial="closed"
+//             animate="opened"
+//             exit="closed"
+//             variants={menuVariants}
+//             /* ✅ রেসপন্সিভ ডিভাইসে ব্যাকগ্রাউন্ড কালার #f2f2f2 করা হয়েছে */
+//             className="fixed inset-0 z-[100] bg-[#f2f2f2] text-black flex flex-col md:hidden"
+//           >
+//             {/* Mobile Menu Header */}
+//             <div className="container mx-auto px-4 h-16 flex justify-between items-center border-b border-black/10">
+//               <span className="font-semibold text-2xl">Marks</span>
+//               <button
+//                 onClick={() => setIsMenuOpen(false)}
+//                 className="text-lg font-medium tracking-wide"
+//               >
+//                 Close
+//               </button>
+//             </div>
+
+//             {/* Mobile Links Container */}
+//             <div className="flex-1 flex flex-col justify-start pt-12 px-6">
+//               {navLinks.map((link, index) => (
+//                 <motion.div
+//                   key={index}
+//                   variants={linkVariants}
+//                   className="border-b border-black/5"
+//                 >
+//                   <a
+//                     href={link.href}
+//                     onClick={() => {
+//                       setActiveLink(link.href);
+//                       setIsMenuOpen(false);
+//                     }}
+//                     className="block py-6 text-4xl font-medium tracking-tight active:text-gray-500"
+//                   >
+//                     {link.label}
+//                   </a>
+//                 </motion.div>
+//               ))}
+
+//               {/* Mobile CTA */}
+//               <motion.a
+//                 variants={linkVariants}
+//                 href="#newsletter"
+//                 className="mt-12 block w-full text-center bg-black text-white py-4 rounded-full font-bold text-lg shadow-lg"
+//               >
+//                 Let's Talk
+//               </motion.a>
+//             </div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </motion.nav>
+//   );
+// };
+
+// export default Navbar;
+
+
 import React, { useState } from "react";
-import { HiMenu, HiX } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn } from "../utils/motion";
 
@@ -430,39 +1030,66 @@ const Navbar = () => {
   const navLinks = [
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
+    { href: "#works", label: "Works" },
     { href: "#services", label: "Services" },
     { href: "#Contact", label: "Contact" },
   ];
+
+  // ✅ Fullscreen mobile menu slide animation (exact same vibe)
+  const menuVariants = {
+    closed: {
+      y: "-100%",
+      transition: { duration: 0.7, ease: [0.19, 1, 0.22, 1] },
+    },
+    opened: {
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.19, 1, 0.22, 1],
+        when: "beforeChildren",
+        staggerChildren: 0.08,
+        delayChildren: 0.15,
+      },
+    },
+  };
+
+  // ✅ Link reveal (smooth)
+  const linkVariants = {
+    closed: { opacity: 0, y: 24, transition: { duration: 0.2 } },
+    opened: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
+  // ✅ CTA reveal (slightly later)
+  const ctaVariants = {
+    closed: { opacity: 0, y: 18 },
+    opened: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.15 },
+    },
+  };
 
   return (
     <motion.nav
       variants={fadeIn("down", 0.2)}
       initial="hidden"
       animate="show"
-      /* ✅ 'fixed' পরিবর্তন করে 'absolute' করা হয়েছে যাতে স্ক্রল করলে এটি উপরে চলে যায় */
-      className="absolute top-0 left-0 right-0 z-50 bg-[#F2F2F2]"
+      className="absolute top-0 left-0 right-0 z-50 bg-[#f2f2f2]"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 md:h-20 h-16 flex items-center justify-between">
-
-        {/* Logo */}
+        {/* Logo Section (✅ exact same) */}
         <div className="flex items-center gap-4 cursor-pointer">
-          <div className="h-11 w-11 flex items-center justify-center rounded-2xl border border-black/10 bg-white text-black font-semibold shadow-sm">
-            TS
-          </div>
-          <div>
-            <p className="font-semibold text-black leading-tight">
-              TawakkulStudio
-            </p>
-            <p className="text-sm text-black/50">
-              Branding • Web • Growth
-            </p>
-          </div>
+          <p className="font-semibold text-3xl text-black leading-tight">
+            Marks
+          </p>
         </div>
 
-        {/* Desktop Menu */}
+        {/* Desktop Menu (✅ exact same to same) */}
         <div className="hidden md:flex items-center gap-8">
-
-          {/* Center Pill Navigation */}
           <div className="flex items-center gap-8 bg-white px-8 py-3 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-black/5">
             {navLinks.map((link, index) => (
               <a
@@ -480,7 +1107,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -491,71 +1117,69 @@ const Navbar = () => {
           </motion.a>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Toggle Button (✅ Menu text) */}
         <button
-          className="md:hidden p-2 text-black"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden text-lg font-medium text-black px-2"
+          onClick={() => setIsMenuOpen(true)}
         >
-          {isMenuOpen ? (
-            <HiX className="h-6 w-6" />
-          ) : (
-            <HiMenu className="h-6 w-6" />
-          )}
+          Menu
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* ✅ Fullscreen Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              /* ✅ Mobile Overlay ও 'absolute' করা হয়েছে */
-              className="absolute inset-0 h-[100vh] bg-black/20 backdrop-blur-sm md:hidden"
-              onClick={() => setIsMenuOpen(false)}
-            />
+          <motion.div
+            initial="closed"
+            animate="opened"
+            exit="closed"
+            variants={menuVariants}
+            className="fixed inset-0 z-[100] bg-[#f2f2f2] text-black flex flex-col md:hidden"
+          >
+            {/* Mobile Menu Header (✅ exact same) */}
+            <div className="container mx-auto px-4 h-16 flex justify-between items-center border-b border-black/10">
+              <span className="font-semibold text-2xl">Marks</span>
 
-            <motion.div
-              initial={{ y: -40, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -40, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 220 }}
-              className="absolute top-full left-0 right-0 bg-[#F1F2F4] md:hidden shadow-xl"
-            >
-              <div className="px-6 py-8 space-y-6">
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="text-lg font-medium tracking-wide"
+              >
+                Close
+              </button>
+            </div>
 
-                {navLinks.map((link, index) => (
-                  <motion.a
-                    key={index}
+            {/* Mobile Links Container */}
+            <div className="flex-1 flex flex-col justify-start pt-12 px-6">
+              {navLinks.map((link, index) => (
+                <motion.div
+                  key={index}
+                  variants={linkVariants}
+                  className="border-b border-black/5"
+                >
+                  <a
                     href={link.href}
-                    initial={{ x: -40, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: index * 0.1 }}
                     onClick={() => {
                       setActiveLink(link.href);
                       setIsMenuOpen(false);
                     }}
-                    className="block text-lg font-medium text-gray-700 hover:text-black"
+                    className="block py-6 text-4xl font-medium tracking-tight active:text-gray-500"
                   >
                     {link.label}
-                  </motion.a>
-                ))}
+                  </a>
+                </motion.div>
+              ))}
 
-                <motion.a
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.3 }}
-                  href="#newsletter"
-                  className="block w-full text-center bg-black text-white py-3 rounded-full font-medium"
-                >
-                  Let's Talk
-                </motion.a>
-
-              </div>
-            </motion.div>
-          </>
+              {/* Mobile CTA */}
+              <motion.a
+                variants={ctaVariants}
+                href="#newsletter"
+                onClick={() => setIsMenuOpen(false)}
+                className="mt-12 block w-full text-center bg-black text-white py-4 rounded-full font-bold text-lg shadow-lg"
+              >
+                Let's Talk
+              </motion.a>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </motion.nav>
@@ -563,6 +1187,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 
 // import React, { useState } from "react";
 // import { HiMenu, HiX } from "react-icons/hi";

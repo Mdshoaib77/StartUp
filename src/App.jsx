@@ -105,6 +105,57 @@
 
 // export default App
 
+// import { Routes, Route } from "react-router-dom";
+// import "./App.css";
+
+// import Navbar from "./components/Navbar";
+// import Footer from "./components/Footer";
+// import ScrollButton from "./components/ScrollButton";
+
+// import Hero from "./components/Hero";
+// import CompanyLogo from "./components/CompanyLogo";
+// import PurposeSection from "./components/PurposeSection";
+// import FeaturesSection from "./components/FeaturesSection";
+// import ScheduleSection from "./components/ScheduleSection";
+// import ServicesSection from "./components/ServicesSection";
+// import TestimonialsSection from "./components/TestimonialsSection";
+// import Contact from "./components/Contact";
+
+// function Home() {
+//   return (
+//     <>
+//       <Hero />
+//       <CompanyLogo />
+//       <PurposeSection />
+//       <FeaturesSection />
+//       <ScheduleSection />
+//       <ServicesSection />
+//       <TestimonialsSection />
+//       <Contact />
+//     </>
+//   );
+// }
+
+// function App() {
+//   return (
+//     <main className="relative min-h-screen overflow-x-hidden">
+//       <Navbar />
+
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//       </Routes>
+
+//       {/* 🔥 Smart Scroll Button */}
+//       <ScrollButton />
+
+//       <Footer />
+//     </main>
+//   );
+// }
+
+// export default App;
+
+import React, { useState } from "react"; // useState ইম্পোর্ট করা হয়েছে
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -137,16 +188,21 @@ function Home() {
 }
 
 function App() {
+  // ✅ এই স্টেটটি দিয়ে আমরা ট্র্যাক করবো মোবাইল মেনু ওপেন কি না
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <main className="relative min-h-screen overflow-x-hidden">
-      <Navbar />
+      {/* ✅ Navbar কে স্টেট এবং ফাংশন পাঠানো হয়েছে */}
+      <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
 
+      {/* ✅ ScrollButton কে স্টেট পাঠানো হয়েছে যাতে মেনু খুললে সে হাইড হয় */}
       {/* 🔥 Smart Scroll Button */}
-      <ScrollButton />
+      <ScrollButton isMenuOpen={isMenuOpen} />
 
       <Footer />
     </main>
