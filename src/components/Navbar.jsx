@@ -273,6 +273,151 @@
 
 // export default Navbar;
 
+// import React, { useState } from "react";
+// import { HiMenu, HiX } from "react-icons/hi";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { fadeIn } from "../utils/motion";
+
+// const Navbar = () => {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const [activeLink, setActiveLink] = useState("#home");
+
+//   const navLinks = [
+//     { href: "#home", label: "Home" },
+//     { href: "#about", label: "About" },
+//     { href: "#services", label: "Services" },
+//     { href: "#Contact", label: "Contact" },
+//   ];
+
+//   return (
+//     <motion.nav
+//       variants={fadeIn("down", 0.2)}
+//       initial="hidden"
+//       animate="show"
+//       className="fixed top-0 left-0 right-0 z-50 bg-[#F2F2F2]"
+//     >
+//       <div className="container mx-auto px-4 sm:px-6 lg:px-8 md:h-20 h-16 flex items-center justify-between">
+
+//         {/* Logo */}
+//         <div className="flex items-center gap-4 cursor-pointer">
+//           <div className="h-11 w-11 flex items-center justify-center rounded-2xl border border-black/10 bg-white text-black font-semibold shadow-sm">
+//             TS
+//           </div>
+//           <div>
+//             <p className="font-semibold text-black leading-tight">
+//               TawakkulStudio
+//             </p>
+//             <p className="text-sm text-black/50">
+//               Branding • Web • Growth
+//             </p>
+//           </div>
+//         </div>
+
+//         {/* Desktop Menu */}
+//         <div className="hidden md:flex items-center gap-8">
+
+//           {/* Center Pill Navigation */}
+//           <div className="flex items-center gap-8 bg-white px-8 py-3 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-black/5">
+//             {navLinks.map((link, index) => (
+//               <a
+//                 key={index}
+//                 href={link.href}
+//                 onClick={() => setActiveLink(link.href)}
+//                 className={`relative text-sm font-medium transition px-3 py-1 rounded-full ${
+//                   activeLink === link.href
+//                     ? "bg-gray-200 text-black"
+//                     : "text-gray-600 hover:text-black"
+//                 }`}
+//               >
+//                 {link.label}
+//               </a>
+//             ))}
+//           </div>
+
+//           {/* CTA Button */}
+//           <motion.a
+//             whileHover={{ scale: 1.05 }}
+//             whileTap={{ scale: 0.95 }}
+//             href="#newsletter"
+//             className="bg-black text-white px-7 py-3 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition"
+//           >
+//             Let's Talk
+//           </motion.a>
+//         </div>
+
+//         {/* Mobile Toggle */}
+//         <button
+//           className="md:hidden p-2 text-black"
+//           onClick={() => setIsMenuOpen(!isMenuOpen)}
+//         >
+//           {isMenuOpen ? (
+//             <HiX className="h-6 w-6" />
+//           ) : (
+//             <HiMenu className="h-6 w-6" />
+//           )}
+//         </button>
+//       </div>
+
+//       {/* Mobile Menu */}
+//       <AnimatePresence>
+//         {isMenuOpen && (
+//           <>
+//             <motion.div
+//               initial={{ opacity: 0 }}
+//               animate={{ opacity: 1 }}
+//               exit={{ opacity: 0 }}
+//               className="fixed inset-0 bg-black/20 backdrop-blur-sm md:hidden"
+//               onClick={() => setIsMenuOpen(false)}
+//             />
+
+//             <motion.div
+//               initial={{ y: -40, opacity: 0 }}
+//               animate={{ y: 0, opacity: 1 }}
+//               exit={{ y: -40, opacity: 0 }}
+//               transition={{ type: "spring", stiffness: 220 }}
+//               className="absolute top-full left-0 right-0 bg-[#F1F2F4] md:hidden shadow-xl"
+//             >
+//               <div className="px-6 py-8 space-y-6">
+
+//                 {navLinks.map((link, index) => (
+//                   <motion.a
+//                     key={index}
+//                     href={link.href}
+//                     initial={{ x: -40, opacity: 0 }}
+//                     animate={{ x: 0, opacity: 1 }}
+//                     transition={{ delay: index * 0.1 }}
+//                     onClick={() => {
+//                       setActiveLink(link.href);
+//                       setIsMenuOpen(false);
+//                     }}
+//                     className="block text-lg font-medium text-gray-700 hover:text-black"
+//                   >
+//                     {link.label}
+//                   </motion.a>
+//                 ))}
+
+//                 <motion.a
+//                   initial={{ y: 20, opacity: 0 }}
+//                   animate={{ y: 0, opacity: 1 }}
+//                   transition={{ delay: 0.3 }}
+//                   href="#newsletter"
+//                   className="block w-full text-center bg-black text-white py-3 rounded-full font-medium"
+//                 >
+//                   Let's Talk
+//                 </motion.a>
+
+//               </div>
+//             </motion.div>
+//           </>
+//         )}
+//       </AnimatePresence>
+//     </motion.nav>
+//   );
+// };
+
+// export default Navbar;
+
+
 import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
@@ -294,7 +439,8 @@ const Navbar = () => {
       variants={fadeIn("down", 0.2)}
       initial="hidden"
       animate="show"
-      className="fixed top-0 left-0 right-0 z-50 bg-[#F2F2F2]"
+      /* ✅ 'fixed' পরিবর্তন করে 'absolute' করা হয়েছে যাতে স্ক্রল করলে এটি উপরে চলে যায় */
+      className="absolute top-0 left-0 right-0 z-50 bg-[#F2F2F2]"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 md:h-20 h-16 flex items-center justify-between">
 
@@ -366,7 +512,8 @@ const Navbar = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/20 backdrop-blur-sm md:hidden"
+              /* ✅ Mobile Overlay ও 'absolute' করা হয়েছে */
+              className="absolute inset-0 h-[100vh] bg-black/20 backdrop-blur-sm md:hidden"
               onClick={() => setIsMenuOpen(false)}
             />
 
@@ -416,7 +563,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
 
 // import React, { useState } from "react";
 // import { HiMenu, HiX } from "react-icons/hi";

@@ -1791,7 +1791,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-[#f2f2f2] overflow-hidden pt-16 md:pt-20 font-space">
+    <section id="hero" className="relative w-full min-h-screen bg-[#f2f2f2] overflow-hidden pt-16 md:pt-20 font-space">
 
       {/* 🔴 RED IMAGE GLOW */}
       <motion.div 
