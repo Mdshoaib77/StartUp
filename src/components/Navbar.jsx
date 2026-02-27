@@ -1137,7 +1137,8 @@ const Navbar = () => {
             className="fixed inset-0 z-[100] bg-[#f2f2f2] text-black flex flex-col md:hidden"
           >
             {/* Mobile Menu Header (✅ exact same) */}
-            <div className="container mx-auto px-4 h-16 flex justify-between items-center border-b border-black/10">
+            {/* <div className="container mx-auto px-4 h-16 flex justify-between items-center border-b border-black/10"> */}
+            <div className="container mx-auto px-4 h-20 pt-2 flex justify-between items-center border-b border-black/10">
               <span className="font-semibold text-2xl">Marks</span>
 
               <button
@@ -1174,7 +1175,7 @@ const Navbar = () => {
                 variants={ctaVariants}
                 href="#newsletter"
                 onClick={() => setIsMenuOpen(false)}
-                className="mt-12 block w-full text-center bg-black text-white py-4 rounded-full font-bold text-lg shadow-lg"
+                className="mt-8 block w-full text-center bg-black text-white py-4 rounded-full font-bold text-lg shadow-lg"
               >
                 Let's Talk
               </motion.a>
