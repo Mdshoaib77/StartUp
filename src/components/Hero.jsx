@@ -2553,7 +2553,7 @@ const Hero = () => {
                   <motion.span
                       animate={{ rotate: 360 }}
                           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                            className="text-[60px] md:text-[85px] xl:relative xl:-top-12"
+                            className="text-[60px] md:text-[85px] xl:relative xl:-top-10"
                                      >
                                 ✳︎
                            </motion.span>

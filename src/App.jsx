@@ -204,7 +204,7 @@ function App() {
       {/* 🔥 Smart Scroll Button */}
       <ScrollButton isMenuOpen={isMenuOpen} />
 
-      {/* <Footer /> */}
+      <Footer />
     </main>
   );
 }

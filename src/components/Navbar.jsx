@@ -1032,7 +1032,8 @@ const Navbar = () => {
     { href: "#about", label: "About" },
     { href: "#works", label: "Works" },
     { href: "#services", label: "Services" },
-    { href: "#Contact", label: "Contact" },
+    // { href: "#Contact", label: "Contact" },
+    { href: "#contact", label: "Contact" }
   ];
 
   // ✅ Fullscreen mobile menu slide animation (exact same vibe)
@@ -1084,7 +1085,7 @@ const Navbar = () => {
         {/* Logo Section (✅ exact same) */}
         <div className="flex items-center gap-4 cursor-pointer">
           <p className="font-semibold text-3xl text-black leading-tight">
-            Marks
+            Devators
           </p>
         </div>
 
@@ -1111,7 +1112,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             href="#newsletter"
-            className="bg-black text-white px-7 py-3 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition"
+            className="bg-[#ff5517]  text-black px-7 py-3 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition"
           >
             Let's Talk
           </motion.a>
