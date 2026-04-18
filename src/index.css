@@ -67,6 +67,8 @@ html {
   cursor: not-allowed;
 } */
 
+
+
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 @import "tailwindcss";
 
@@ -79,7 +81,6 @@ html {
   scroll-padding-top: 100px;
 }
 
-/* আপনার আগের কাস্টম CSS গুলো এখানে থাকবে */
 .active { color: red; }
 @keyframes marquee {
   0% { transform: translateX(0); }

@@ -346,7 +346,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="bg-[#F1F2F4] py-32">
+    <section className="bg-[#F2F2F2] py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="grid md:grid-cols-2 gap-20 items-start">
