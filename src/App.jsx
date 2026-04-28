@@ -155,7 +155,65 @@
 
 // export default App;
 
-import React, { useState } from "react"; // useState ইম্পোর্ট করা হয়েছে
+// import React, { useState } from "react"; // useState ইম্পোর্ট করা হয়েছে
+// import { Routes, Route } from "react-router-dom";
+// import "./App.css";
+
+// import Navbar from "./components/Navbar";
+// import Footer from "./components/Footer";
+// import ScrollButton from "./components/ScrollButton";
+
+// import Hero from "./components/Hero";
+// import CompanyLogo from "./components/CompanyLogo";
+// import PurposeSection from "./components/PurposeSection";
+// import FeaturesSection from "./components/FeaturesSection";
+// import ScheduleSection from "./components/ScheduleSection";
+// import ServicesSection from "./components/ServicesSection";
+// import TestimonialsSection from "./components/TestimonialsSection";
+// import Contact from "./components/Contact";
+// import works from "./components/works";
+
+// function Home() {
+//   return (
+//     <>
+//       <Hero />
+//       <CompanyLogo />
+//       <PurposeSection />
+//       <FeaturesSection />
+//      <works/>
+//       <ScheduleSection />
+//       <ServicesSection />
+//       <TestimonialsSection />
+//       <Contact />
+//     </>
+//   );
+// }
+
+// function App() {
+//   // ✅ এই স্টেটটি দিয়ে আমরা ট্র্যাক করবো মোবাইল মেনু ওপেন কি না
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+//   return (
+//     <main className="relative min-h-screen overflow-x-hidden">
+//       {/* ✅ Navbar কে স্টেট এবং ফাংশন পাঠানো হয়েছে */}
+//       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//       </Routes>
+
+//       {/* ✅ ScrollButton কে স্টেট পাঠানো হয়েছে যাতে মেনু খুললে সে হাইড হয় */}
+//       {/* 🔥 Smart Scroll Button */}
+//       <ScrollButton isMenuOpen={isMenuOpen} />
+
+//       <Footer />
+//     </main>
+//   );
+// }
+
+// export default App;
+
+import React, { useState } from "react"; 
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -171,6 +229,7 @@ import ScheduleSection from "./components/ScheduleSection";
 import ServicesSection from "./components/ServicesSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import Contact from "./components/Contact";
+import Works from "./components/works"; // ✅ FIX (Capital)
 
 function Home() {
   return (
@@ -179,6 +238,7 @@ function Home() {
       <CompanyLogo />
       <PurposeSection />
       <FeaturesSection />
+      <Works /> {/* ✅ FIX */}
       <ScheduleSection />
       <ServicesSection />
       <TestimonialsSection />
@@ -188,20 +248,17 @@ function Home() {
 }
 
 function App() {
-  // ✅ এই স্টেটটি দিয়ে আমরা ট্র্যাক করবো মোবাইল মেনু ওপেন কি না
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <main className="relative min-h-screen overflow-x-hidden">
-      {/* ✅ Navbar কে স্টেট এবং ফাংশন পাঠানো হয়েছে */}
+      
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
 
-      {/* ✅ ScrollButton কে স্টেট পাঠানো হয়েছে যাতে মেনু খুললে সে হাইড হয় */}
-      {/* 🔥 Smart Scroll Button */}
       <ScrollButton isMenuOpen={isMenuOpen} />
 
       <Footer />
