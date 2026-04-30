@@ -3152,7 +3152,7 @@ const Hero = () => {
             transition={{ delay: 1.2, duration: 0.8 }}
             className="absolute left-0 top-[520px] md:left-0 md:top-[290px]"
           >
-            <p className="max-w-[320px] md:max-w-[660px] text-[15px] font-semibold uppercase leading-[1.5] tracking-[0.08em] text-black">
+            <p className="max-w-[320px] mt-10 md:max-w-[660px] text-[15px] font-semibold uppercase leading-[1.5] tracking-[0.08em] text-black">
               WE ARE STRATEGIC BRANDING <br />
               DESIGN AGENCY HELPING <br />
               THE PLANET  MOST COMPANIES<br />
