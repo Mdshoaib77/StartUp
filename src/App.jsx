@@ -213,6 +213,61 @@
 
 // export default App;
 
+// import React, { useState } from "react"; 
+// import { Routes, Route } from "react-router-dom";
+// import "./App.css";
+
+// import Navbar from "./components/Navbar";
+// import Footer from "./components/Footer";
+// import ScrollButton from "./components/ScrollButton";
+
+// import Hero from "./components/Hero";
+// import CompanyLogo from "./components/CompanyLogo";
+// import PurposeSection from "./components/PurposeSection";
+// import FeaturesSection from "./components/FeaturesSection";
+// import ScheduleSection from "./components/ScheduleSection";
+// import ServicesSection from "./components/ServicesSection";
+// import TestimonialsSection from "./components/TestimonialsSection";
+// import Contact from "./components/Contact";
+// import Works from "./components/works"; // ✅ FIX (Capital)
+
+// function Home() {
+//   return (
+//     <>
+//       <Hero />
+//       <CompanyLogo />
+//       {/* <PurposeSection /> */}
+//       <FeaturesSection />
+//       <Works /> {/* ✅ FIX */}
+//       <ScheduleSection />
+//       <ServicesSection />
+//       <TestimonialsSection />
+//       <Contact />
+//     </>
+//   );
+// }
+
+// function App() {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+//   return (
+//     <main className="relative min-h-screen overflow-x-hidden">
+      
+//       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//       </Routes>
+
+//       <ScrollButton isMenuOpen={isMenuOpen} />
+
+//       <Footer />
+//     </main>
+//   );
+// }
+
+// export default App;
+
 import React, { useState } from "react"; 
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -229,7 +284,7 @@ import ScheduleSection from "./components/ScheduleSection";
 import ServicesSection from "./components/ServicesSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import Contact from "./components/Contact";
-import Works from "./components/works"; // ✅ FIX (Capital)
+import Works from "./components/Works"; // ✅ FIX (Capital)
 
 function Home() {
   return (
