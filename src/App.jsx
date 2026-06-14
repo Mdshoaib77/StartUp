@@ -236,7 +236,7 @@ function Home() {
     <>
       <Hero />
       <CompanyLogo />
-      <PurposeSection />
+      {/* <PurposeSection /> */}
       <FeaturesSection />
       <Works /> {/* ✅ FIX */}
       <ScheduleSection />

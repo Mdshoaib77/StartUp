@@ -3079,13 +3079,13 @@ const Works = () => {
       <div className="max-w-7xl mx-auto">
         {/* HEADER SECTION */}
         <div className="mb-20">
-          <motion.p className="text-xs tracking-[0.3em] uppercase text-gray-500 mb-4">
+          {/* <motion.p className="text-xs tracking-[0.3em] uppercase text-gray-500 mb-4">
             Case Studies
-          </motion.p>
+          </motion.p> */}
 
-          <motion.h2 className="text-4xl md:text-6xl font-medium text-gray-900 leading-tight max-w-4xl">
+          <motion.h2 className="text-4xl md:text-6xl font-medium text-gray-400 leading-tight max-w-4xl">
             Work created at moments where change becomes{" "}
-            <span className="italic text-gray-400">
+            <span className="italic text-gray-900">
               inevitable by design.
             </span>
           </motion.h2>

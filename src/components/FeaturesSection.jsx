@@ -326,6 +326,93 @@
 // export default FeaturesSection;
 
 
+// import React from "react";
+// import { motion } from "framer-motion";
+
+// const FeaturesSection = () => {
+//   const features = [
+//     {
+//       title: "Clarity Before Creativity",
+//       desc: "We start with strategy. Research, positioning, and direction define everything we build."
+//     },
+//     {
+//       title: "Design That Converts",
+//       desc: "Beautiful interfaces engineered to guide users and increase measurable results."
+//     },
+//     {
+//       title: "Growth With Structure",
+//       desc: "Marketing systems built on data, testing, and long-term scalability."
+//     }
+//   ];
+
+//   return (
+//     <section className="bg-[#F2F2F2] py-32">
+//       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
+//         <div className="grid md:grid-cols-2 gap-20 items-start">
+
+//           {/* LEFT SIDE BIG STATEMENT */}
+//           <motion.div
+//             initial={{ opacity: 0, y: 40 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.8 }}
+//             viewport={{ once: true }}
+//           >
+//             <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight mb-8">
+//               We Don’t Just Build
+//               <br />
+//               Websites.
+//             </h2>
+
+//             <p className="text-xl text-black/70 leading-relaxed mb-12">
+//               We build growth engines — combining branding, design,
+//               technology, and marketing into one focused ecosystem.
+//             </p>
+
+//             <a
+//               href="#contact"
+//               className="inline-block text-black font-semibold border-b border-black pb-1 hover:opacity-70 transition"
+//             >
+//               Let’s talk strategy →
+//             </a>
+//           </motion.div>
+
+//           {/* RIGHT SIDE STACKED FEATURES */}
+//           <div className="space-y-12">
+
+//             {features.map((item, index) => (
+//               <motion.div
+//                 key={index}
+//                 initial={{ opacity: 0, x: 40 }}
+//                 whileInView={{ opacity: 1, x: 0 }}
+//                 transition={{ delay: index * 0.2 }}
+//                 viewport={{ once: true }}
+//                 className="relative pl-10"
+//               >
+//                 {/* Vertical Line Indicator */}
+//                 <div className="absolute left-0 top-2 w-1 h-12 bg-black rounded-full"></div>
+
+//                 <h3 className="text-xl font-semibold text-black mb-3">
+//                   {item.title}
+//                 </h3>
+
+//                 <p className="text-black/60 leading-relaxed">
+//                   {item.desc}
+//                 </p>
+//               </motion.div>
+//             ))}
+
+//           </div>
+
+//         </div>
+
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default FeaturesSection;
+
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -346,7 +433,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="bg-[#F2F2F2] py-32">
+    <section id="about" className="bg-[#F2F2F2] py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="grid md:grid-cols-2 gap-20 items-start">
